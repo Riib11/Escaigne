@@ -43,6 +43,7 @@ Each _Escaigne_ program defines exactly one integer sequence, using the followin
   | «integer»
   | «boolean»
   | «string»
+  | «name»
 
 ```
 
