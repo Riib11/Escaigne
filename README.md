@@ -21,7 +21,6 @@ Each _Escaigne_ program defines exactly one integer sequence, using the followin
 «statement» ::=
   | Value «name» := «expression».
   | Function «name» «parameters» := «expression».
-  | Operation «name» «name» «name» := «expression».
   | Symbolic Value «name».
   | Symbolic Function «name» «integer».
   | Symbolic Operation «name».
@@ -61,9 +60,7 @@ Note that the grammar is purposely kept very sparse. For example, simple operati
 
 `Function f x1 ... xn := e` binds `f` to a function with parameters `x1, ..., xn` and evaluates to `e`.
 
-`Operation a • b := e` binds `•` to a function with parameters `a, b` and evaluates to `e`. Additionally, `•` is marked as an infixed operator.
-
-`Symbolic Value n`, `Symbolic Function f #`, and `Symbolic Operation •` bind their names to the appropriate type of value, which is marked as symbolic. A symbolic value cannot be reduced, and persists in the output. Symbolic values are automatically assumed to extend equality, but no other properties. Symbolic values are useful for forcing a certain representations - making explicit kinds of abstractions about the output sequence.
+`Symbolic Value n` and `Symbolic Function f #` bind their names to the appropriate type of value, which is marked as symbolic. A symbolic value cannot be reduced, and persists in the output. Symbolic values are automatically assumed to extend equality, but no other properties. Symbolic values are useful for forcing a certain representations - making explicit kinds of abstractions about the output sequence.
 
 `Table t` declares a new table that can store values. Notably, these values persist during the evaluation of the generator over many entries of the sequence. This construct is useful for taking advantage of a dynamic-programming approach to computing some sequences (e.g. the Fibbonacci sequence).
 
